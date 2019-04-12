@@ -3,6 +3,10 @@ from tensorflow.python.platform import gfile
 import tensorflow as tf
 import numpy as np
 import time
+import os
+
+#As our end goal is minimize the network, therefore turning off the GPU
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 mnist = input_data.read_data_sets("./MNIST-data")
 frozen_graph = "./projected_mnist.pb"
